@@ -13,7 +13,8 @@ class Facturations < ActiveRecord::Migration[7.0]
       t.float :longitude
       t.string :country_code
       t.boolean :default, default: false, null: false
-      t.references :user, foreign_key: true, null: false, index: true
+      t.references :booking, foreign_key: true, null: false, index: true
+      t.timestamps
     end
   end
 end
