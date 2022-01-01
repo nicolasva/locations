@@ -7,6 +7,9 @@ gem 'carrierwave'
 gem 'rubocop'
 gem 'pg'
 gem 'devise'
+gem 'reform'
+gem 'sass'
+gem 'bootstrap'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.0"
