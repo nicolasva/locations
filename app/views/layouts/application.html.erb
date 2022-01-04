@@ -11,34 +11,37 @@
   </head>
 
   <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
-    <%= link_to image_tag("logos/logo_home.png", size: "30x30"), root_path %>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
-      <% if @homes.length > 1 %>
-        <ul class="navbar-nav">
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Les maisons
-            </a>
-            <%= content_tag(:ul, class: "dropdown-menu dropdown-menu-dark", :aria => { labelledby: "navbarDarkDropdownMenuLink" } ) do %>
-              <% @homes.each do |home| %>
-                <%= content_tag(:li, link_to(home.title, "#", class: "dropdown-item") ) %>
-              <% end %>
-            <% end %>
-          </li>
-        </ul>
-      <% elsif @homes.length > 0 %>
-        <div class="badge text-wrap" style="width: 6rem;">
-          <%= @homes.first.title %>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <%= link_to image_tag("logos/logo_home.png", size: "30x30"), root_path %>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+          <% if @homes.length > 1 %>
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Les maisons
+                </a>
+                <%= content_tag(:ul, class: "dropdown-menu dropdown-menu-dark", :aria => { labelledby: "navbarDarkDropdownMenuLink" } ) do %>
+                  <% @homes.each do |home| %>
+                    <%= content_tag(:li, link_to(home.title, "#", class: "dropdown-item") ) %>
+                  <% end %>
+                <% end %>
+              </li>
+            </ul>
+          <% elsif @homes.length > 0 %>
+            <div class="badge text-wrap" style="width: 6rem;">
+              <%= @homes.first.title %>
+            </div>
+          <% end %>
         </div>
-      <% end %>
+      </div>
+    </nav>
+    <div class="main container">
+      <%= render("shared/flash") %>
+      <%= yield %>
     </div>
-  </div>
-</nav>
-    <%= yield %>
   </body>
 </html>

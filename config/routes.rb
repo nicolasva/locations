@@ -6,5 +6,9 @@ Rails.application.routes.draw do
   # root "articles#index"
   resources :homes, only: [:index]
 
+  namespace :admin do
+    resources :homes
+  end
+
   root to: 'homes#index'
 end

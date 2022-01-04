@@ -1,0 +1,15 @@
+<% if @homes.length > 1 %>
+  <ul>
+    <% @homes.each do |home| %>
+      <li> 
+        <h2>
+          <%= home.title %>
+        </h2>
+        <div class="row">
+          <%= home.presentation.content %>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+<% elsif @homes.length > 0 %>
+<% end %>

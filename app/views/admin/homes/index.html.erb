@@ -1,0 +1,19 @@
+<h1> Les maisons </h1>
+<table>
+  <thead>
+    <tr>
+      <td>
+        titre
+      </td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @homes.each do |home| %>
+      <tr>
+        <td>
+          <%= link_to home.title, edit_admin_home_path(home)  %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

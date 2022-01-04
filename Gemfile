@@ -10,6 +10,8 @@ gem 'devise'
 gem 'reform'
 gem 'sass'
 gem 'bootstrap'
+gem 'reform-rails'
+gem 'simple_form'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.0"
